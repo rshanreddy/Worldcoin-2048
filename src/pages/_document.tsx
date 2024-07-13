@@ -1,3 +1,4 @@
+import MiniKitProvider from '@/minikitprovider';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -31,10 +32,12 @@ export default function Document() {
         <meta name="application-name" content="2048" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
+      <MiniKitProvider>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </MiniKitProvider>
     </Html>
   );
 }
