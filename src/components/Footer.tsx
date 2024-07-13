@@ -1,7 +1,6 @@
 import { MiniKit, tokenToDecimals, Tokens, PayCommandInput, ResponseEvent, MiniAppPaymentPayload } from '@worldcoin/minikit-js'
 import { useEffect } from 'react';
 const Footer: React.FC = () => {
-
   
   useEffect(() => {
     if (!MiniKit.isInstalled()) {
@@ -60,14 +59,14 @@ const Footer: React.FC = () => {
         Goal is to get a tile with the number <strong>2048</strong>.
       </p>
       <p>
-        Built by{' '}
+        Built by RSR for{' '}
         <a
-          href="https://github.com/rshanreddy"
+          href="https://ethglobal.com/events/brussels"
           target="_blank"
           rel="noopener noreferrer"
           className="font-bold underline"
         >
-          Shan Reddy
+          ETH Global Brussels 2024
         </a>
         .
       </p>

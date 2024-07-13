@@ -6,6 +6,8 @@ const Header = () => {
   const score = useAppSelector((state) => state.app.score);
   const best = useAppSelector((state) => state.app.best);
 
+  
+
   return (
     <>
       <div className="flex justify-between align-middle">

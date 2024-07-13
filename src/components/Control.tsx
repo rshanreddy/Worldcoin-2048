@@ -29,6 +29,7 @@ const Control = () => {
       <div className="flex gap-5">
         <button onClick={() => dispatch(reset())} className='bg-black'>New game</button>
       </div>
+      
     </div>
   );
 };
