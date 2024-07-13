@@ -10,7 +10,7 @@
 
 **See it in action!**
 
-![Gameplay Screenshot](game.png)
+![game](https://github.com/user-attachments/assets/b3b211ac-9ef6-4f33-81b3-ad8a5c1c9a57)
 
 **Supporting the Project:**
 
@@ -19,7 +19,7 @@
 
 **Check out the donation feature powered by Worldcoin Mini Kit:**
 
-![Donation Feature](payingame.png)
+![payingame](https://github.com/user-attachments/assets/fd00ee02-151e-4f40-9dbd-5d046445c8c6)
 
 **Behind the Scenes:**
 
