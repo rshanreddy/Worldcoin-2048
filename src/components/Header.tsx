@@ -10,8 +10,7 @@ const Header = () => {
     <>
       <div className="flex justify-between align-middle">
         <div className='grid grid-cols-2 gap-x-2 items-center'>
-          <h1 className="text-5xl font-bold text-black">2048</h1>
-          <Image src="/orb.webp" width={300} height={300}></Image>
+          <Image src="/2orb48.png" width={300} height={300}></Image>
         </div>
         <div className="flex gap-5">
           <div className="m-auto rounded-md bg-black p-6 text-center font-bold text-white">
