@@ -157,7 +157,7 @@ const Board = () => {
   return (
     <div className="relative">
       <div
-        className={`border-3 grid touch-none select-none gap-4 rounded-md bg-[#bbada0] p-5`}
+        className={`border-3 grid touch-none select-none gap-4 rounded-md bg-black p-5`}
         onMouseDown={onMouseStart}
         onMouseUp={onMouseEnd}
         onMouseLeave={onMouseEnd}

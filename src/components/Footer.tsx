@@ -48,15 +48,12 @@ const Footer: React.FC = () => {
     
     <div className="leading-lg text-center font-medium text-[#776e65]">
 
-      <button onClick={startPayment}>
-        Pay Me
+      <button onClick={startPayment} className='mt-4 px-16 py-5 font-lg bg-black'>
+        Donate to Me
       </button>
       <h2 className="my-5 text-4xl underline">How to play?</h2>
       <p className="md:text-md text-sm">
-        Use your <strong>arrow keys ( &larr; &uarr; &darr; &rarr; )</strong> to
-        move the tiles. <br />
-        If you are playing on a mobile device, you can also swipe to move the
-        tiles.
+        Swipe to move the tiles.
         <br />
         When two tiles with the same number touch, they{' '}
         <strong>merge into one!</strong> <br />

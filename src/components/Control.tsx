@@ -18,15 +18,16 @@ const Control = () => {
           <button
             onClick={() => dispatch(resetAction(size - 1))}
             disabled={size === 4}
+            className='bg-black'
           >
             -
           </button>
           <div>{size}</div>
-          <button onClick={() => dispatch(resetAction(size + 1))}>+</button>
+          <button onClick={() => dispatch(resetAction(size + 1))} className='bg-black'>+</button>
         </div>
       </div>
       <div className="flex gap-5">
-        <button onClick={() => dispatch(reset())}>New game</button>
+        <button onClick={() => dispatch(reset())} className='bg-black'>New game</button>
       </div>
     </div>
   );

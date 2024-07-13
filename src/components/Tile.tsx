@@ -97,7 +97,7 @@ const Tile: React.FC<TileProps> = ({ value, animations }) => {
   }
 
   return (
-    <div className="leading-0 relative rounded-md  bg-[#cdc1b4] pb-[100%] text-lg">
+    <div className="leading-0 relative rounded-md  bg-white pb-[100%] text-lg">
       {value !== 0 && (
         <div
           className={clsx(
