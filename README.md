@@ -10,7 +10,7 @@
 
 **See it in action!**
 
-![game](https://github.com/user-attachments/assets/b3b211ac-9ef6-4f33-81b3-ad8a5c1c9a57)
+![game](https://github.com/user-attachments/assets/b3b211ac-9ef6-4f33-81b3-ad8a5c1c9a57 width="500")
 
 **Supporting the Project:**
 
@@ -19,7 +19,7 @@
 
 **Check out the donation feature powered by Worldcoin Mini Kit:**
 
-![payingame](https://github.com/user-attachments/assets/fd00ee02-151e-4f40-9dbd-5d046445c8c6)
+![payingame](https://github.com/user-attachments/assets/fd00ee02-151e-4f40-9dbd-5d046445c8c6 width="500")
 
 **Behind the Scenes:**
 
