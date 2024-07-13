@@ -13,8 +13,6 @@
     "lint": "next lint",
     "format": "prettier --write --ignore-unknown .",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "commit": "git-cz",
     "lint-staged": "lint-staged --config lint-staged.config.cjs"
   },
@@ -27,8 +25,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@worldcoin/minikit-js": "0.0.24-internal-alpha",
     "clsx": "^1.2.1",
-    "next": "13.3.1",
-    "next-pwa": "^5.6.0",
+    "next": "14.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5"
@@ -36,8 +33,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
-    "@types/eslint": "^8.37.0",
-    "@types/next-pwa": "^5.6.2",
     "@types/node": "18.16.0",
     "@types/prettier": "^2.7.2",
     "@types/react": "18.0.38",
