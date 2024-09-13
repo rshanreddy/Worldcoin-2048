@@ -1,5 +1,6 @@
-import { type CSSProperties, useMemo } from 'react';
+import React, { type CSSProperties, useMemo, useState, useEffect } from 'react';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 import {
   type Animation,
@@ -9,7 +10,6 @@ import {
   AnimationType,
 } from '@/types/Animations';
 import { Direction } from '@/types/Direction';
-import Image from 'next/image';
 
 export interface TileProps {
   value: number;
@@ -28,6 +28,20 @@ function findAnimation<T extends Animation>(
 }
 
 const Tile: React.FC<TileProps> = ({ value, animations }) => {
+  const [previousValue, setPreviousValue] = useState(value);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    if (value !== previousValue) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        setPreviousValue(value);
+        setIsTransitioning(false);
+      }, 150); // Increased to 150ms to match Tailwind's default transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [value, previousValue]);
+
   const moveAnimation = useMemo(
     () => findAnimation<AnimationMove>(animations, AnimationType.MOVE),
     [animations],
@@ -47,7 +61,7 @@ const Tile: React.FC<TileProps> = ({ value, animations }) => {
     }
 
     const value: CSSProperties = {
-      transition: '100ms ease-in-out all',
+      transition: 'transform 150ms ease-in-out', // Adjusted to match Tailwind's duration
     };
 
     switch (moveAnimation.direction) {
@@ -98,25 +112,39 @@ const Tile: React.FC<TileProps> = ({ value, animations }) => {
   }
 
   return (
-    <div className="leading-0 relative rounded-md bg-white pb-[100%] text-lg">
+    <div className="relative rounded-md bg-white pb-[100%] text-lg">
       {value !== 0 && (
         <div
           className={clsx(
-            'leading-0 z-9 absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-md bg-[#3c3a32] text-sm font-bold text-black',
+            'absolute inset-0 flex items-center justify-center overflow-hidden rounded-md bg-[#3c3a32] text-sm font-bold text-black',
             {
-              new: !!newAnimation,
-              merge: !!mergeAnimation,
+              'animate-appear': !!newAnimation,
+              'animate-pop': !!mergeAnimation,
             },
           )}
           style={style}
         >
           <Image
-            src={tileImage(value)}
-            alt={value.toString()}
+            key={previousValue}
+            src={tileImage(previousValue)}
+            alt={previousValue.toString()}
             height={400}
             width={400}
-            className="rounded-md"
+            className={clsx(
+              'rounded-md transition-opacity duration-150 ease-in-out',
+              isTransitioning ? 'opacity-0' : 'opacity-100',
+            )}
           />
+          {isTransitioning && (
+            <Image
+              key={value}
+              src={tileImage(value)}
+              alt={value.toString()}
+              height={400}
+              width={400}
+              className="absolute inset-0 rounded-md"
+            />
+          )}
         </div>
       )}
     </div>
