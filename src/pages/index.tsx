@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Play 2048!</title>
       </Head>
-      <main className="mx-auto my-5 max-w-lg p-2 ">
+      <main className="mx-auto grid h-screen max-w-lg items-center p-4 py-8">
         <Header />
         <Board />
         <Footer />

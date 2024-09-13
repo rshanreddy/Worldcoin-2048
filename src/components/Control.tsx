@@ -1,6 +1,7 @@
 import useAppDispatch from '@/hooks/useAppDispatch';
 import useAppSelector from '@/hooks/useAppSelector';
 import { resetAction } from '@/store/action';
+import React from 'react';
 import { useCallback } from 'react';
 
 const Control = () => {
@@ -11,26 +12,12 @@ const Control = () => {
     [dispatch, size],
   );
   return (
-    <div className="my-2 flex w-full justify-between gap-5">
-      <div className="flex flex-col gap-2">
-        <p className="text-center font-bold">Board size</p>
-        <div className="flex w-full flex-row justify-between gap-2">
-          <button
-            onClick={() => dispatch(resetAction(size - 1))}
-            disabled={size === 4}
-            className='bg-black'
-          >
-            -
-          </button>
-          <div>{size}</div>
-          <button onClick={() => dispatch(resetAction(size + 1))} className='bg-black'>+</button>
-        </div>
-      </div>
-      <div className="flex gap-5">
-        <button onClick={() => dispatch(reset())} className='bg-black'>New game</button>
-      </div>
-      
-    </div>
+    <button
+      onClick={() => dispatch(reset())}
+      className="w-full bg-black px-16 py-4"
+    >
+      New game
+    </button>
   );
 };
 

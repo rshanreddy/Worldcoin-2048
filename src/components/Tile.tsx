@@ -9,6 +9,7 @@ import {
   AnimationType,
 } from '@/types/Animations';
 import { Direction } from '@/types/Direction';
+import Image from 'next/image';
 
 export interface TileProps {
   value: number;
@@ -67,42 +68,41 @@ const Tile: React.FC<TileProps> = ({ value, animations }) => {
     return value;
   }, [moveAnimation]);
 
-  function tileColor(value: number): string {
+  function tileImage(value: number): string {
     switch (value) {
       case 2:
-        return 'bg-[#eee4da]';
+        return '/game-assets/2.png';
       case 4:
-        return 'bg-[#ede0c8]';
+        return '/game-assets/4.png';
       case 8:
-        return 'bg-[#f2b179]';
+        return '/game-assets/8.png';
       case 16:
-        return 'bg-[#f59563]';
+        return '/game-assets/16.png';
       case 32:
-        return 'bg-[#f67c5f]';
+        return '/game-assets/32.png';
       case 64:
-        return 'bg-[#f65e3b]';
+        return '/game-assets/64.png';
       case 128:
-        return 'bg-[#edcf72]';
+        return '/game-assets/128.png';
       case 256:
-        return 'bg-[#edcc61]';
+        return '/game-assets/256.png';
       case 512:
-        return 'bg-[#edc850]';
+        return '/game-assets/512.png';
       case 1024:
-        return 'bg-[#edc53f]';
+        return '/game-assets/1024.png';
       case 2048:
-        return 'bg-[#edc22e]';
+        return '/game-assets/2048.png';
       default:
-        return 'bg-[#cdc1b4]';
+        return '/game-assets/2.png';
     }
   }
 
   return (
-    <div className="leading-0 relative rounded-md  bg-white pb-[100%] text-lg">
+    <div className="leading-0 relative rounded-md bg-white pb-[100%] text-lg">
       {value !== 0 && (
         <div
           className={clsx(
             'leading-0 z-9 absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-md bg-[#3c3a32] text-sm font-bold text-black',
-            tileColor(value),
             {
               new: !!newAnimation,
               merge: !!mergeAnimation,
@@ -110,7 +110,13 @@ const Tile: React.FC<TileProps> = ({ value, animations }) => {
           )}
           style={style}
         >
-          {value}
+          <Image
+            src={tileImage(value)}
+            alt={value.toString()}
+            height={400}
+            width={400}
+            className="rounded-md"
+          />
         </div>
       )}
     </div>

@@ -18,7 +18,7 @@ const Board = () => {
   const startPointerLocation = useRef<Point>();
   const currentPointerLocation = useRef<Point>();
 
-  const animationDuration = 150;
+  const animationDuration = 180;
 
   const onMove = useCallback(
     (direction: Direction) => dispatch(moveAction(direction)),
@@ -157,7 +157,7 @@ const Board = () => {
   return (
     <div className="relative">
       <div
-        className={`border-3 grid touch-none select-none gap-4 rounded-md bg-black p-5`}
+        className={`grid touch-none select-none gap-2.5 rounded-md border-2 bg-black p-2.5`}
         onMouseDown={onMouseStart}
         onMouseUp={onMouseEnd}
         onMouseLeave={onMouseEnd}
